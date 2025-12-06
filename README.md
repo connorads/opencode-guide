@@ -1,6 +1,6 @@
 # OpenCode
 
-[OpenCode](https://opencode.ai) is an open-source AI coding agent for the terminal. Think Claude Code, Gemini CLI, or GitHub Copilot CLI - but open source, so you only need to learn and customise one tool.
+[OpenCode](https://opencode.ai) is an open-source AI coding agent for the terminal. Think Claude Code, Codex, Gemini CLI, or GitHub Copilot CLI - but open source, so you only need to learn and customise one tool.
 
 It works with your existing subscriptions - Claude Pro/Max, GitHub Copilot, ChatGPT Plus, or Gemini - instead of paying for yet another API.
 
