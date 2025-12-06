@@ -33,7 +33,7 @@ Then run `/connect` and select your provider. OpenCode supports 75+ providers in
 | **OpenAI** | API key from platform.openai.com |
 | **ChatGPT Plus/Pro** | OAuth via [opencode-openai-codex-auth](https://github.com/numman-ali/opencode-openai-codex-auth) plugin |
 | **Gemini** | Google account via [opencode-gemini-auth](https://github.com/jenslys/opencode-gemini-auth) plugin |
-| **OpenCode Zen** | Curated models from the OpenCode team (includes free models) |
+| **OpenCode Zen** | [Curated models](https://opencode.ai/docs/zen/) from the OpenCode team (includes free models) |
 
 For ChatGPT or Gemini, add the plugin to your config (`~/.config/opencode/opencode.json`):
 
@@ -124,7 +124,7 @@ In OpenCode, Plan mode is strictly read-only. To execute a plan:
 
 ### Permissions are more permissive by default
 
-OpenCode allows most operations without asking. To replicate Claude Code's confirmation prompts, add to your config:
+OpenCode allows most operations without asking. To replicate Claude Code's confirmation prompts, add to your config ([permissions docs](https://opencode.ai/docs/permissions/)):
 
 ```json
 {
@@ -154,7 +154,7 @@ You can also use wildcards for granular control:
 
 ### MCP servers are configured in the config file
 
-No `claude mcp` equivalent - add servers directly to `opencode.json`:
+No `claude mcp` equivalent - add servers directly to `opencode.json` ([MCP docs](https://opencode.ai/docs/mcp-servers/)):
 
 ```json
 {
