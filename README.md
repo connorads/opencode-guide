@@ -171,6 +171,26 @@ No `claude mcp` equivalent - add servers directly to `opencode.json` ([MCP docs]
 
 Set `"enabled": false` to disable without removing from config.
 
+### Hooks work through plugins
+
+Claude Code has a `hooks` config for running scripts at lifecycle events. OpenCode uses plugins instead - more powerful but requires JavaScript:
+
+Create `.opencode/plugin/my-hooks.js` (project) or `~/.config/opencode/plugin/` (global):
+
+```javascript
+export const AutoFormat = async ({ $ }) => {
+  return {
+    "tool.execute.after": async (input) => {
+      if (input.tool === "edit") {
+        await $`prettier --write ${input.input.filePath}`
+      }
+    }
+  }
+}
+```
+
+Available hooks include `tool.execute.before`, `tool.execute.after`, and events like `session.idle`, `file.edited`, etc. See the [plugins docs](https://opencode.ai/docs/plugins/).
+
 ### No multi-select questions
 
 Claude Code sometimes presents multiple questions with checkboxes. OpenCode uses plain text responses - just answer in your message.
