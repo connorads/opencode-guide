@@ -172,12 +172,24 @@ No `claude mcp` equivalent - add servers directly to `opencode.json` ([MCP docs]
       "type": "local",
       "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
       "enabled": false
+    },
+    "sentry": {
+      "type": "remote",
+      "url": "https://mcp.sentry.dev/mcp",
+      "enabled": false,
+      "oauth": {}
     }
   }
 }
 ```
 
-Set `"enabled": false` to disable without removing from config.
+Set `"enabled": false` to keep an MCP configured but off by default.
+
+### You can toggle MCPs from inside OpenCode
+
+You can toggle MCP servers on/off from inside OpenCode using `/mcp`. Disabled MCPs will not show up in the model context.
+
+Caveat: as of writing, changes to enabled/disabled MCPs only apply to a *new session* (run `/new`), even if you just launched OpenCode and have not sent a message yet.
 
 ### Hooks work through plugins
 
