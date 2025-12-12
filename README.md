@@ -91,6 +91,7 @@ Prefix with `!` to run a command and add output to the conversation:
 |---------|---------|-------------|
 | `/models` | `ctrl+x m` | Switch models |
 | `/new` | `ctrl+x n` | Start new session |
+| `/mcp` | - | Toggle MCP servers |
 | `/undo` | `ctrl+x u` | Undo last message (reverts file changes too) |
 | `/redo` | `ctrl+x r` | Redo undone message |
 | `/sessions` | `ctrl+x l` | List/switch sessions |
@@ -162,16 +163,20 @@ You can also use wildcards for granular control:
 
 ### MCP servers are configured in the config file
 
-No `claude mcp` equivalent - add servers directly to `opencode.json` ([MCP docs](https://opencode.ai/docs/mcp-servers/)):
+Add servers directly to `opencode.json` ([MCP docs](https://opencode.ai/docs/mcp-servers/)).
 
-```json
+- `enabled` controls startup of the MCP server.
+- `oauth` configures OAuth - use `opencode mcp auth <name>` to authenticate.
+- `tools` (with globs) controls availability to agents.
+
+```jsonc
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
     "chrome-devtools": {
       "type": "local",
       "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
-      "enabled": false
+      "enabled": false,
     },
     "sentry": {
       "type": "remote",
@@ -179,17 +184,23 @@ No `claude mcp` equivalent - add servers directly to `opencode.json` ([MCP docs]
       "enabled": false,
       "oauth": {}
     }
+  },
+  "tools": {
+    // Disable globally
+    "chrome-devtools*": false,
+    "sentry*": false
+  },
+  "agent": {
+    "my-debug-agent": {
+      "tools": {
+        // Enable for this agent
+        "chrome-devtools*": true,
+        "sentry*": true
+      }
+    }
   }
 }
 ```
-
-Set `"enabled": false` to keep an MCP configured but off by default.
-
-### You can toggle MCPs from inside OpenCode
-
-You can toggle MCP servers on/off from inside OpenCode using `/mcp`. Disabled MCPs will not show up in the model context.
-
-Caveat: as of writing, changes to enabled/disabled MCPs only apply to a *new session* (run `/new`), even if you just launched OpenCode and have not sent a message yet.
 
 ### Hooks work through plugins
 
