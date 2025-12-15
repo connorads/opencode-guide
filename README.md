@@ -40,7 +40,7 @@ For ChatGPT or Gemini, add the plugin to your config (`~/.config/opencode/openco
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["opencode-gemini-auth"]
+  "plugin": ["opencode-gemini-auth@1.2.0"]
 }
 ```
 
