@@ -113,6 +113,10 @@ Creates an `AGENTS.md` file that helps OpenCode understand your codebase. Commit
 
 OpenCode supports subagents for specialised tasks - similar to Claude Code. You can also define your own custom agents. See the [agents docs](https://opencode.ai/docs/agents/).
 
+### Skills
+
+OpenCode supports [agent skills](https://agentskills.io/): reusable `SKILL.md` definitions you can share in a repo or keep in your global config. For setup details, see the [skills docs](https://opencode.ai/docs/skills/).
+
 ## Tips
 
 - **Drag and drop images** into the terminal to add them to your prompt
@@ -130,6 +134,10 @@ In OpenCode, Plan mode is strictly read-only. To execute a plan:
 
 1. Press **Tab** to switch to Build mode
 2. Send a message like "Go ahead" or "Do it"
+
+### Skills are discovered differently
+
+If you're coming from Claude, OpenCode can load repo-local Claude-compatible skills from `.claude/skills/<name>/SKILL.md`, but it does not load Claude's global skills folder (`~/.claude/skills`). Copy any global Claude skills into your repo (`.claude/skills/...`) or into OpenCode's global skills folder (`~/.opencode/skill/<name>/SKILL.md`). See the [skills docs](https://opencode.ai/docs/skills/) for supported locations.
 
 ### Permissions are more permissive by default
 
