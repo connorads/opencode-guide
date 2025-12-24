@@ -35,7 +35,13 @@ Then run `/connect` and select your provider. OpenCode supports 75+ providers in
 | **Gemini** | Google account via [opencode-gemini-auth](https://github.com/jenslys/opencode-gemini-auth) plugin |
 | **OpenCode Zen** | [Curated models](https://opencode.ai/docs/zen/) from the OpenCode team (includes free models) |
 
-For ChatGPT or Gemini, add the plugin to your config (`~/.config/opencode/opencode.json`):
+For a full list of providers, see the [providers docs](https://opencode.ai/docs/providers/).
+
+For ChatGPT or Gemini, add the respective plugins to your config (`~/.config/opencode/opencode.json`).
+
+Then run `opencode auth login` and follow the prompts.
+
+#### Gemini
 
 ```json
 {
@@ -44,9 +50,13 @@ For ChatGPT or Gemini, add the plugin to your config (`~/.config/opencode/openco
 }
 ```
 
-Then run `opencode auth login` and follow the prompts.
+#### ChatGPT Plus/Pro (Codex OAuth plugin)
 
-For a full list of providers, see the [providers docs](https://opencode.ai/docs/providers/).
+This setup is a bit more involved (you must adapt the plugin’s full config file). Easiest path: ask OpenCode to do it for you.
+
+```sh
+opencode run "Webfetch https://github.com/numman-ali/opencode-openai-codex-auth/ and follow the 'Agent Instructions (Install / Update)' steps, you can use Webfetch to get the contents instead of cloning the repo."
+```
 
 ## LSP Support
 
