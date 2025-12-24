@@ -13,7 +13,7 @@ brew install opencode
 Or with mise:
 
 ```sh
-mise use -g ubi:sst/opencode
+mise use -g github:sst/opencode
 ```
 
 ## Setup
