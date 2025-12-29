@@ -64,6 +64,26 @@ OpenCode has built-in LSP support - automatically loading the right Language Ser
 
 **Supported languages:** TypeScript, JavaScript, Python, ESLint, Go, Rust, C/C++, Ruby, Elixir, PHP, Java, and more.
 
+### Add a custom LSP (example: ty)
+
+Configure language servers in `~/.config/opencode/opencode.json` (global) or `.opencode.json` (project). Example: disable Pyright and use Astral’s `ty` for `.py` / `.pyi`:
+
+```jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": {
+    // Disable the default Python LSP (Pyright)
+    "pyright": { "disabled": true },
+
+    // Use ty instead
+    "ty": {
+      "command": ["ty", "server"],
+      "extensions": [".py", ".pyi"]
+    }
+  }
+}
+```
+
 See the full list of [supported LSP servers](https://opencode.ai/docs/lsp/) and configuration options.
 
 ## Usage
