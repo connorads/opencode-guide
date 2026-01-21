@@ -2,7 +2,10 @@
 
 [OpenCode](https://opencode.ai) is an open-source AI coding agent for the terminal. Think Claude Code, Codex, Gemini CLI, or GitHub Copilot CLI - but open source, so you only need to learn and customise one tool.
 
-It works with your existing subscriptions - Claude Pro/Max, GitHub Copilot, ChatGPT Plus, or Gemini - instead of paying for yet another API. Built-in LSP support means it understands your code like an IDE - with real-time type checking and diagnostics.
+> [!NOTE]
+> **Anthropic blocked OpenCode** from using Claude Pro/Max subscriptions in Jan 2026, citing [Terms of Service](https://x.com/trq212/status/2009689811616182404). You can still use Claude via API key.
+
+It works with your existing subscriptions - GitHub Copilot, ChatGPT Plus, or Gemini - instead of paying for yet another API. Built-in LSP support means it understands your code like an IDE - with real-time type checking and diagnostics.
 
 ## Install
 
@@ -28,7 +31,7 @@ Then run `/connect` and select your provider. OpenCode supports 75+ providers in
 
 | Provider | Auth Method |
 |----------|-------------|
-| **Anthropic** | Claude Pro/Max subscription (OAuth) or API key |
+| **Anthropic** | API key from [console.anthropic.com](https://console.anthropic.com) |
 | **GitHub Copilot** | Existing Copilot subscription |
 | **OpenAI** | API key from platform.openai.com |
 | **ChatGPT Plus/Pro** | OAuth via [opencode-openai-codex-auth](https://github.com/numman-ali/opencode-openai-codex-auth) plugin |
