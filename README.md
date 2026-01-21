@@ -32,7 +32,7 @@ Then run `/connect` and select your provider. OpenCode supports 75+ providers in
 | Provider | Auth Method |
 |----------|-------------|
 | **Anthropic** | API key from [console.anthropic.com](https://console.anthropic.com) |
-| **GitHub Copilot** | Existing Copilot subscription |
+| **GitHub Copilot** | Existing Copilot subscription ([128k context limit](https://github.com/sst/opencode/issues/2317)) |
 | **OpenAI** | API key from platform.openai.com |
 | **ChatGPT Plus/Pro** | OAuth (first-party support) |
 | **Gemini** | Google account via [opencode-gemini-auth](https://github.com/jenslys/opencode-gemini-auth) plugin |
