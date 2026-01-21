@@ -34,13 +34,13 @@ Then run `/connect` and select your provider. OpenCode supports 75+ providers in
 | **Anthropic** | API key from [console.anthropic.com](https://console.anthropic.com) |
 | **GitHub Copilot** | Existing Copilot subscription |
 | **OpenAI** | API key from platform.openai.com |
-| **ChatGPT Plus/Pro** | OAuth via [opencode-openai-codex-auth](https://github.com/numman-ali/opencode-openai-codex-auth) plugin |
+| **ChatGPT Plus/Pro** | OAuth (first-party support) |
 | **Gemini** | Google account via [opencode-gemini-auth](https://github.com/jenslys/opencode-gemini-auth) plugin |
 | **OpenCode Zen** | [Curated models](https://opencode.ai/docs/zen/) from the OpenCode team (includes free models) |
 
 For a full list of providers, see the [providers docs](https://opencode.ai/docs/providers/).
 
-For ChatGPT or Gemini, add the respective plugins to your config (`~/.config/opencode/opencode.json`).
+For Gemini, add the plugin to your config (`~/.config/opencode/opencode.json`).
 
 Then run `opencode auth login` and follow the prompts.
 
@@ -51,14 +51,6 @@ Then run `opencode auth login` and follow the prompts.
   "$schema": "https://opencode.ai/config.json",
   "plugin": ["opencode-gemini-auth@1.2.0"]
 }
-```
-
-#### ChatGPT Plus/Pro (Codex OAuth plugin)
-
-This setup is a bit more involved (you must adapt the plugin’s full config file). Easiest path: ask OpenCode to do it for you.
-
-```sh
-opencode run "Webfetch https://github.com/numman-ali/opencode-openai-codex-auth/ and follow the 'Agent Instructions (Install / Update)' steps, you can use Webfetch to get the contents instead of cloning the repo."
 ```
 
 ## LSP Support
